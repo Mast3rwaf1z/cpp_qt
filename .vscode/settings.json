@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "system_error": "cpp",
+        "qwidget": "cpp",
+        "qapplication": "cpp",
+        "qboxlayout": "cpp"
+    }
+}

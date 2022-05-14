@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
         int y = coordinates[1];
         QPushButton* button = new QPushButton(("Button " + to_string(i)).c_str(), window);
         app.connect(button, &QPushButton::clicked, &app, [=]{
-            cout << "button " << i << " pressed!" << endl;
+            system("cowsay 'button pressed!'");
             int x = button->geometry().x();
             int y = button->geometry().y();
             int randx = -100 + (rand() % (100 - (-100) + 1));
