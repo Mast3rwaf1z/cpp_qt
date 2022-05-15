@@ -40,19 +40,19 @@ int main(int argc, char* argv[]){
     mover->setGeometry(width/2, height/2, width/5, height/5);
     QHBoxLayout* h_layout = new QHBoxLayout();
     QPushButton* left = new QPushButton("Left");
-    app.connect(left, &QPushButton::clicked, &app, [mover, &distance] mutable {
+    app.connect(left, &QPushButton::clicked, &app, [mover, &distance] {
         move_mover(mover, "left", distance);
     });
     QPushButton* up = new QPushButton("Up");
-    app.connect(up, &QPushButton::clicked, &app, [mover, &distance] mutable {
+    app.connect(up, &QPushButton::clicked, &app, [mover, &distance] {
         move_mover(mover, "up", distance);
     });
     QPushButton* down = new QPushButton("Down");
-    app.connect(down, &QPushButton::clicked, &app, [mover, &distance] mutable {
+    app.connect(down, &QPushButton::clicked, &app, [mover, &distance] {
         move_mover(mover, "down", distance);
     });
     QPushButton* right = new QPushButton("Right");
-    app.connect(right, &QPushButton::clicked, &app, [mover, &distance] mutable {
+    app.connect(right, &QPushButton::clicked, &app, [mover, &distance] {
         move_mover(mover, "right", distance);
     });
     QVBoxLayout* v_layout = new QVBoxLayout();
@@ -70,7 +70,7 @@ int main(int argc, char* argv[]){
     QLineEdit* distance_entry = new QLineEdit(to_string(distance).c_str());
     QLabel* distance_label = new QLabel("Distance");
     QPushButton* set_distance = new QPushButton("Set distance");
-    app.connect(set_distance, &QPushButton::clicked, &app, [&distance, distance_entry] mutable {
+    app.connect(set_distance, &QPushButton::clicked, &app, [&distance, distance_entry] {
         cout << "set distance from " << distance;
         distance = distance_entry->text().toInt();
         cout << "px to " << distance << "px" << endl;
